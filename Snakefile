@@ -4,7 +4,7 @@ logdir         = "logs/"
 resourcedir    = "resources/"
 pedigree_file  = "alea/simped103id"
 phenotype_file = "alea/simdatafull"
-output_csv     = outdir + "snakedevout.csv"
+output_file    = outdir + "snakedevout.txt"
             
 # inputvcffile should be the filename defined in the workflow input in Rakeiora.
 # Rakeiora will create this multi-sample vcf.gz file from your selections.
@@ -21,8 +21,8 @@ rule rscript:
         ,VCF   = inputvcffile
         ,PHENO = phenotype_file
     output:
-        csv = output_csv
+        out = output_file
     container:
         singularity_R
     shell:
-        "Rscript {input.Rfile} GBLUP {input.PED} {input.VCF} {input.PHENO} NA > {output.csv} 2>&1"
+        "Rscript {input.Rfile} GBLUP {input.PED} {input.VCF} {input.PHENO} NA > {output.out} 2>&1"
