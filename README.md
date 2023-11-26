@@ -3,6 +3,8 @@ whakapapa workflow for rakeiora
 
 Author: Alastair.Lamont@otago.ac.nz
 
+version: 1.1
+
 With minor folder structure adjustments to run in Rakeiora.
 
 To use in Rakeiora, define a single input of htsget_type=variants,
@@ -49,3 +51,11 @@ After ALEA is configured to contain and provide this data, it will be retrieved
 from ALEA. This is obviously sensitive information that will not be stored
 in a public repository unless it is public anonymised information, or fabricated
 for testing purposes.
+
+## Change log
+Version 1.0 - Initial release
+
+Version 1.1
+    - move stuff to a config file (so that snakemake --lint is happy)
+    - loop over methods (GBLUP and ssGBLUP, as configured in config.yaml)
+    - split stdout (output) from stderr (logs)

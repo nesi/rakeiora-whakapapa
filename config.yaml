@@ -1,0 +1,13 @@
+# inputvcf_file should be the filename defined in the workflow input in Rakeiora.
+# Rakeiora will create this multi-sample vcf.gz file from your selections.
+
+# logs/ and results/ will be copied to jupyter hub
+
+singularity_R  : "/shared/singularities/whakapapa_1.0.sif"
+Rscript_file   : "GBLUPsnakemakeMay23.R"
+logdir         : "logs/"
+outdir         : "results/"
+pedigree_file  : "alea/simped103id"
+phenotype_file : "alea/simdatafull"
+inputvcf_file  : "resources/input.vcf.gz"
+METHODS        : ["GBLUP","ssGBLUP" ]
